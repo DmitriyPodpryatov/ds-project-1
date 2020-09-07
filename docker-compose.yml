@@ -1,11 +1,10 @@
 version: '3.8'
 services:
   app:
-    image: dpodpryatov/iu:ds_project01_task07
+    image: dpodpryatov/ds:project01_task07
     deploy:
       restart_policy:
         condition: on-failure
       replicas: 3
     ports:
       - 8080:8080
-
