@@ -1,1 +1,1 @@
-docker stack rm ds_project01_task15
+docker stack rm project01_task15
