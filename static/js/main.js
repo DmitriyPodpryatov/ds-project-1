@@ -115,20 +115,17 @@ function lower() {
 }
 
 
-/* ======================= Save Results ======================= */
-// Open modal to save results
+/* ======================= Modal ======================= */
+// Open modal
 function openModal() {
     $('#modal').modal('show');
 
+    // Set text element to "Your win streak is X."
     let element = document.getElementById("modal-win-streak");
     element.textContent = "Your win streak is " + getCurrentWinStreak() + ".";
 }
 
-// Save results
-function saveResults() {
-    let username = document.getElementById("name").value;
-    let winStreak = getCurrentWinStreak();
-
-    console.log(username + ': ' + winStreak);
+// Close modal
+function closeModal() {
     $('#modal').modal('hide');
 }

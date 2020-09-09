@@ -1,4 +1,5 @@
-version: '3.8'
+version: '3'
+
 services:
   app:
     image: dpodpryatov/ds:project01_task15
@@ -7,4 +8,19 @@ services:
         condition: on-failure
       replicas: 3
     ports:
-      - 8080:8080
+      - 80:80
+
+  redis:
+    image: redis
+    deploy:
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints: [node.role == manager]
+    volumes:
+      - data:/data
+    ports:
+      - 6379:6379
+
+volumes:
+  data:
