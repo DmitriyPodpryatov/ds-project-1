@@ -7,6 +7,10 @@ services:
       restart_policy:
         condition: on-failure
       replicas: 3
+
+      resources:
+        reservations:
+          cpus: '0.2'
     ports:
       - 80:80
 
